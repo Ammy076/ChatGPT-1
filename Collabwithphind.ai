@@ -1,0 +1,17 @@
+import openai
+
+# Set up your API key
+api_key = "your_api_key_here"
+
+# Initialize the OpenAI API client
+openai.api_key = api_key
+
+# Make an API request
+response = openai.Completion.create(
+    engine="text-davinci-003",  # GPT-3.5 engine
+    prompt="Translate the following English text to French: 'Hello, how are you?'",
+    max_tokens=50  # Adjust the response length as needed
+)
+
+# Print the model's response
+print(response.choices[0].text)
